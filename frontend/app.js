@@ -83,7 +83,7 @@ async function login() {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/login', {
+        const response = await fetch('https://carbon-credit-marketplace.onrender.com/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ async function register() {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/register', {
+        const response = await fetch('https://carbon-credit-marketplace.onrender.com/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -175,7 +175,7 @@ async function loadUserData() {
     if (!currentUser) return;
     
     try {
-        const response = await fetch(`http://localhost:3000/api/user/${currentUser.username}`);
+        const response = await fetch(`https://carbon-credit-marketplace.onrender.com/api/user/${currentUser.username}`);
         if (response.ok) {
             const userData = await response.json();
             document.getElementById('user-name').textContent = userData.username;
@@ -209,7 +209,7 @@ async function listCredits() {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/list-credit', {
+        const response = await fetch('https://carbon-credit-marketplace.onrender.com/api/list-credit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -242,7 +242,7 @@ async function listCredits() {
 // Marketplace functions
 async function loadMarketplace() {
     try {
-        const response = await fetch('http://localhost:3000/api/marketplace');
+        const response = await fetch('https://carbon-credit-marketplace.onrender.com/api/marketplace');
         const listings = await response.json();
         updateMarketplaceDisplay(listings);
     } catch (error) {
@@ -289,7 +289,7 @@ async function buyCredits(listingId) {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/buy-credit', {
+        const response = await fetch('https://carbon-credit-marketplace.onrender.com/api/buy-credit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -321,7 +321,7 @@ async function buyCredits(listingId) {
 // Blockchain functions
 async function loadBlockchain() {
     try {
-        const response = await fetch('http://localhost:3000/api/blockchain');
+        const response = await fetch('https://carbon-credit-marketplace.onrender.com/api/blockchain');
         const blockchain = await response.json();
         updateBlockchainDisplay(blockchain);
     } catch (error) {
