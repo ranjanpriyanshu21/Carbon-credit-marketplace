@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #2E8B57, #3CB371);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.section {
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.hidden {
+    display: none;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+input, select {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3CB371;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #3CB371, #2E8B57);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+    flex: 1;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    max-width: 200px;
+}
+
+.user-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.user-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+.form input {
+    flex: 1;
+    min-width: 150px;
+}
+
+.listings {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.listing-card {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.listing-card h4 {
+    color: #2E8B57;
+    margin-bottom: 10px;
+}
+
+.listing-card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.buy-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin-top: 10px;
+}
+
+.blockchain-info {
+    background: #1a1a1a;
+    color: #00ff00;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.block {
+    background: #2a2a2a;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #00ff00;
+}
+
+.block-header {
+    color: #ffff00;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.alert {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.alert.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+@media (max-width: 768px) {
+    .form {
+        flex-direction: column;
+    }
+    
+    .form input {
+        width: 100%;
+    }
+    
+    .listings {
+        grid-template-columns: 1fr;
+    }
+}
+/* Add to existing CSS */
+.alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 1000;
+    min-width: 300px;
+    text-align: center;
+}
+
+.alert.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.no-listings, .no-blocks {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-style: italic;
+}
+
+.connection-status {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.connection-status.connected {
+    background: #d4edda;
+    color: #155724;
+}
+
+.connection-status.disconnected {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.connection-status.error {
+    background: #f8d7da;
+    color: #721c24;
+}
